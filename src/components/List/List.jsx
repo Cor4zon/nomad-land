@@ -4,24 +4,16 @@ import { CircularProgress, Grid, Typography, InputLabel, MenuItem, FormControl, 
 import useStyles from './styles';
 import PlaceDetails from "../PlaceDetails/PlaceDetails";
 
-const List = () => {
+const List = ({ places, childClicked }) => {
     const classes = useStyles();
     // restaurants - default value
     const [type, setType] = useState('restaurants');
     const [rating, setRating] = useState('');
 
-    const places = [
-        {'name': 'Good beer'},
-        {'name': 'Good wine'},
-        {'name': 'Good steak'},
 
-        {'name': 'Good beer'},
-        {'name': 'Good wine'},
-        {'name': 'Good steak'},
-        {'name': 'Good beer'},
-        {'name': 'Good wine'},
-        {'name': 'Good steak'},
-    ]
+    console.log({ childClicked });
+
+
     return (
         <div className={classes.container}>
             <Typography variant="h4">Restaurants, Hotels & Attraction around you</Typography>
