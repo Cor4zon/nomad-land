@@ -2,7 +2,7 @@ import React from 'react';
 import { Box, Typography, Button, Card, CardMedia, CardContent, CardActions, Chip } from "@material-ui/core";
 import LocationOnIcon from '@material-ui/icons/LocationOn';
 import PhoneIcon from '@material-ui/icons/Phone';
-import Rating from '@material-ui/lab';
+import Rating from '@material-ui/lab/Rating';
 
 import useStyles from './styles';
 
@@ -23,8 +23,8 @@ const PlaceDetails = ({ place }) => {
                     <Typography gutterBottom variant="subtitle1">{ place.price_level }</Typography>
                 </Box>
                 <Box display="flex" justifyContent="space-between">
-                    <Typography variant="subtitle1">Ranking</Typography>
-                    <Typography gutterBottom variant="subtitle1">{ place.ranking }</Typography>
+                    <Rating value={Number(place.rating)} readOnly />
+                    <Typography gutterBottom variant="subtitle1">out of {place.num_reviews} reviews</Typography>
                 </Box>
                 {place?.awards?.map((award) => (
                     <Box display="flex" justifyContent="space-between" my={1} alignItems="center">
